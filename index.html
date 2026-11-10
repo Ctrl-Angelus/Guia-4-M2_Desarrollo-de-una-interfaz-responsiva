@@ -7,68 +7,401 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/themes/prism-tomorrow.min.css"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div>
-            <a href="#" class="navbar-brand" aria-label="Página de inicio - Desarrollo con Pygame">
-                Inicio
-            </a>
+            <div>
+                <a href="#" class="navbar-brand" aria-label="Página de inicio - Desarrollo con Pygame">
+                    <img src="./img/logo.png" alt="logo">
+                    Artículo
+                </a>
+            </div>
+            <nav class="navbar" aria-label="Navegación principal">
+
+
+            </nav>
+            <button id="toggler" type="button" data-bs-toggle="collapse" aria-controls="menuPrincipal"
+                aria-expanded="false" aria-label="Abrir o cerrar menú de navegación">
+                <i class="ti ti-sun" id="dark-toggle"></i>
+                <i class="ti ti-moon-stars" id="light-toggle"></i>
+            </button>
         </div>
-        <nav class="navbar" aria-label="Navegación principal">
-
-
-        </nav>
-        <button id="toggler" type="button" data-bs-toggle="collapse" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar menú de navegación">
-            <i class="ti ti-sun" id="dark-toggle"></i>
-            <i class="ti ti-moon-stars" id="light-toggle"></i>
-        </button>
     </header>
     <main>
-       
+
         <aside aria-label="Índice de contenidos">
-                    <div>
-                        <h3 id="aside-header">Contenido</h3>
-                        <nav class="nav flex-column gap-2" aria-label="Navegación interna de la guía">
-                            <a class="nav-link p-0" href="#introduccion">Introducción</a>
-                            <a class="nav-link p-0" href="#estructura-basica">Estructura básica</a>
-                            <a class="nav-link p-0" href="#ciclo-de-juego">Ciclo de juego</a>
-                            <a class="nav-link p-0" href="#dibujar-elementos">Dibujar elementos</a>
-                            <a class="nav-link p-0" href="#eventos-de-teclado">Eventos de teclado</a>
-                            <a class="nav-link p-0" href="#colisiones">Colisiones</a>
-                            <a class="nav-link p-0" href="#imagenes-y-sonido">Imágenes y sonido</a>
-                            <a class="nav-link p-0" href="#ejemplo-practico">Ejemplo práctico</a>
-                        </nav>
-                    </div>
-                </aside>
-                 <article>
-                    <h1>Desarrollo de juegos 2D con la libreria de Pygame</h1>
+            <div>
+                <h3 id="aside-header">Contenido</h3>
+                <nav class="nav flex-column gap-2" aria-label="Navegación interna de la guía">
+                    <a class="nav-link p-0" href="#introduccion">Introducción</a>
+                    <a class="nav-link p-0" href="#estructura-basica">Estructura básica</a>
+                    <a class="nav-link p-0" href="#ciclo-de-juego">Ciclo de juego</a>
+                    <a class="nav-link p-0" href="#dibujar-elementos">Dibujar elementos</a>
+                    <a class="nav-link p-0" href="#eventos-de-teclado">Eventos de teclado</a>
+                    <a class="nav-link p-0" href="#colisiones">Colisiones</a>
+                    <a class="nav-link p-0" href="#imagenes-y-sonido">Imágenes y sonido</a>
+                    <a class="nav-link p-0" href="#ejemplo-practico">Ejemplo práctico</a>
+                </nav>
+            </div>
+        </aside>
+        <article>
+            <h1>Desarrollo de juegos 2D con la libreria de Pygame</h1>
 
-                    <figure>
-                         <img 
-                            src="./img/Banner.png" 
-                            alt="Desarrollo de videojuegos en 2D con la librería Pygame" 
-                            style="max-height: 400px;"
-                            loading="eager">
-                        <figcaption>
-                            Banner de Introducción 
-                        </figcaption>
+            <figure class="image-container">
+                <img src="./img/Banner.png" alt="Desarrollo de videojuegos en 2D con la librería Pygame" loading="eager"
+                    class="banner">
+                <figcaption>
+                    Banner de Introducción
+                </figcaption>
 
-                    </figure>
+            </figure>
 
-                    <section>
-                        <h2 id="introduccion"> Introducción a Pygame</h2>
-                        <p>Pygame es una libreria del legn
-                    </section>
+            <section>
+                <h2 id="introduccion"> Introducción a Pygame</h2>
 
-                 </article>
+                <h3>¿Qué es Pygame</h3>
+                <p>Pygame es una libreria del lenguaje de programación Python, pensada para crear aplicaciones
+                    multimedia y videojuegos 0D. Esta librería está basada en la biblioteca SDL (Simple DirectMedia
+                    Layer), lo que le permite ejecutarse en cualquier sistema que tenga soporte para esta biblioteca
+                    (Windows, Linux, MacOS y otros). Pygame ofrece una variedad de diferentes módulos y herramientas que
+                    permiten crear y manejar ventanas, elementos gráficos, colisiones, eventos, imágenes sonidos, entre
+                    muchas otras cosas.</p>
+
+                <h3>Ventajas de Pygame sobre otras alternativas de desarrollo 2D</h3>
+                <p>Una de las principales características que hacen destacar a Pygame sobre alternativas como
+                    Pyglet o librerías de otros lenguajes como Raylib es su facilidad de uso. Gracias a la
+                    sintaxis simple del lenguaje de programación Python y a que Pygame está basado en SDL,
+                    muchos de los conceptos más abstractos y de bajo nivel, como el manejo de sonido, memoria
+                    gráfica o eventos le permiten al desarrollador enfocarse principalmente en desarrollar la
+                    lógica de la aplicación, sin generar una curva de aprendizaje tan compleja.</p>
+                <p>Otra de las razones por las que Pygame es una opción bastante conveniente es su multiplataforma
+                    nativa y su bajo impacto en los recursos del sistema,
+                    gracias a ser esencialmente una envoltura de SDL.
+                    Además, Pygame cuenta con una comunidad enorme de desarrolladores que crean documentación,
+                    recursos educativos, tutoriales y ejemplos.</p>
+
+                <h3>Instalación de la librería y el entorno</h3>
+                <p> Instalar la librería usando un gestor de paquetes (pip, conda, uv), es recomendable instalar el
+                    paquete pygame.ce, es un fork creado por la comunidad que tiene varios cambios por delante de la
+                    librería normal.</p>
+
+                <figure class="code-snippet">
+                    <pre><code class="language-bash">
+                        pip install pygame-ce
+                        conda install pygame-ce
+                        uv install pygame-ce
+                    </code></pre>
+
+                    <figcaption>Instalación de dependencias</figcaption>
+
+                </figure>
+
+                <p>De esta forma, Pygame se instalará de forma global en el sistema, sin embargo, en sistemas como
+                    linux, donde Python es una dependencia interna del sistema, es mejor crear un entorno virtual dentro
+                    del directorio de trabajo e instalar la dependencia allí dentro. </p>
+
+                <figure class="code-snippet">
+                    <pre><code class="language-bash">
+                    python3 -m venv venv
+                    source venv/bin/activate
+                    pip install pygame-ce
+                </code></pre>
+
+                    <figcaption>Creación de entorno virtual en python</figcaption>
+                </figure>
+            </section>
+            <hr>
+            <section>
+                <h2 id="estructura-basica">Estructura básica de un programa en Pygame</h2>
+                <p>La gran mayoría de programas de Pygame tienen el siguiente esqueleto(no es necesario importar
+                    explícitamente pygame-ce):</p>
+
+                <figure class="code-snippet">
+                    <pre><code class="language-python">
+                                import pygame
+                                import sys
+
+                                # Inicialización
+                                pygame.init()
+
+                                # Configuración de la ventana
+                                ANCHO, ALTO = 800, 600
+                                pantalla = pygame.display.set_mode((ANCHO, ALTO))
+                                pygame.display.set_caption("Mi primer juego")
+
+                                # Reloj para controlar los FPS
+                                reloj = pygame.time.Clock()
+
+                                # Bucle principal (game loop)
+                                corriendo = True
+                                while corriendo:
+
+                                    # 1. Manejo de eventos
+                                    for evento in pygame.event.get():
+                                        if evento.type == pygame.QUIT:
+                                            corriendo = False
+
+                                    # 2. Lógica del juego (actualizar posiciones, colisiones, etc.)
+
+                                    # 3. Dibujar en pantalla
+                                    pantalla.fill((0, 0, 0)) # limpiar pantalla con color negro
+
+                                    pygame.display.flip() # actualizar la pantalla
+                                    reloj.tick(60) # limitar a 60 FPS
+
+                                pygame.quit()
+                                sys.exit()
+                            </code></pre>
+                    <figcaption>Estructura básica de un programa en Pygame</figcaption>
+                </figure>
+
+                <p>Este esqueleto se encarga de hacer una variedad de pasos para asegurar que la aplicación funcione: en
+                    primer lugar se inicializa Pygame, paso necesario para acceder a sus utilidades; se configura la
+                    ventana, el ancho, alto y el título que se va a mostrar; se crea un reloj para limitar los cuadros
+                    por segundo que Pygame tiene permitido dibujar, lo que permite mantener el juego consistente en
+                    diferentes dispositivos que pueden variar en potencia de cómputo; la creación del game loop o ciclo
+                    de juego, este ciclo se encarga de realizar una serie de acciones cada vez que se pinta la ventana
+                    del juego, como pintar objetos, fondos o animaciones; finalmente se cierra pygame y se le envía una
+                    señal de exit al sistema para eliminar la ventana del juego cuando ya no es requerida.</p>
+            </section>
+            <hr>
+
+            <section>
+                <h2 id="ciclo-de-juego">Ciclo de juego</h2>
+                <p>El ciclo de juego (o <em>game loop</em>) es la estructura central de cualquier programa hecho con
+                    Pygame. Se trata de un bucle que se repite constantemente, decenas de veces por segundo, y que en
+                    cada repetición realiza tres tareas principales: capturar los eventos del usuario (teclado, mouse,
+                    cierre de ventana), actualizar la lógica del juego (posiciones, físicas, puntuación) y finalmente
+                    dibujar todo en pantalla. Sin este ciclo, la ventana se abriría y se cerraría de inmediato, ya que
+                    el programa terminaría su ejecución en el primer fotograma.</p>
+
+                <h3>Estructura del bucle principal</h3>
+                <p>Un ciclo de juego típico en Pygame se apoya en un objeto <code>Clock</code>, que permite controlar la
+                    velocidad de ejecución del programa limitando los fotogramas por segundo (FPS).</p>
+                <figure class="code-snippet">
+                    <pre><code class="language-python">
+                                reloj = pygame.time.Clock()
+                                corriendo = True
+
+                                while corriendo:
+                                    # 1. Manejo de eventos
+                                    for evento in pygame.event.get():
+                                        if evento.type == pygame.QUIT:
+                                            corriendo = False
+
+                                    # 2. Lógica del juego
+                                    # (actualizar posiciones, detectar colisiones, etc.)
+
+                                    # 3. Dibujado
+                                    pantalla.fill((0, 0, 0))
+                                    pygame.display.flip()
+
+                                    # 4. Control de velocidad (FPS)
+                                    reloj.tick(60)
+                            </code></pre>
+                    <figcaption>Estructura básica del ciclo de juego con control de FPS</figcaption>
+                </figure>
+
+                <h3>¿Por qué es importante el orden?</h3>
+                <p>Procesar primero los eventos garantiza que la lógica del juego reaccione a la entrada más reciente
+                    del usuario, y dibujar al final asegura que en pantalla se muestre siempre el estado más actualizado
+                    antes de pasar al siguiente fotograma.</p>
+            </section>
+            <hr>
+            <section>
+                <h2 id="dibujar-elementos"> Dibujar elementos</h2>
+                <h3>El módulo de pygame.draw</h3>
+                <p>Pygame incluye el módulo <code>draw</code>, que permite dibujar formas geométricas básicas
+                    directamente sobre una superficie (<code>Surface</code>), como la pantalla del juego. Cada función
+                    recibe la superficie destino, un color en formato RGB y las coordenadas o dimensiones de la forma
+                </p>
+                <figure class="code-snippet">
+                    <pre><code class="language-python">
+                                # Rectángulo: superficie, color, (x, y, ancho, alto)
+                                pygame.draw.rect(pantalla, (255, 0, 0), (100, 100, 50, 50))
+
+                                # Círculo: superficie, color, (centro_x, centro_y), radio
+                                pygame.draw.circle(pantalla, (0, 255, 0), (400, 300), 40)
+
+                                # Línea: superficie, color, punto_inicio, punto_fin, grosor
+                                pygame.draw.line(pantalla, (255, 255, 255), (0, 0), (800, 600), 5)
+                            </code></pre>
+                    <figcaption>Ejemplos de dibujo con el módulo pygame.draw</figcaption>
+                </figure>
+
+                <h3>Colores en formato RGB</h3>
+                <p>Los colores en Pygame se definen como tuplas de tres valores <code>(R, G, B)</code>, donde cada
+                    componente (rojo, verde y azul) va de 0 a 255. Por ejemplo, <code>(0, 0, 0)</code> representa negro
+                    y <code>(255, 255, 255)</code> representa blanco.</p>
+
+                <h3>Superficies (Surface)</h3>
+                <p>Toda imagen o forma en Pygame se dibuja sobre una <code>Surface</code>, que puede pensarse como un
+                    lienzo. La propia ventana del juego, creada con <code>pygame.display.set_mode()</code>, es en
+                    realidad una <code>Surface</code>. También se pueden crear superficies adicionales, útiles para
+                    agrupar elementos o aplicar transparencias.</p>
+                <figure class="code-snippet">
+                    <pre><code class="language-python">
+                                superficie = pygame.Surface((100, 100))
+                                superficie.fill((0, 150, 255))
+                                pantalla.blit(superficie, (200, 200))
+                            </code></pre>
+                    <figcaption>Creación de una superficie personalizada y su renderizado con blit</figcaption>
+                </figure>
+            </section>
+            <hr>
+            <section>
+                <h2 id="eventos-de-teclado">Eventos de teclado</h2>
+                <h3>Dos formas de capturar el teclado</h3>
+                <p>Pygame ofrece dos maneras de reaccionar a la entrada del teclado: mediante el sistema de eventos
+                    (<code>pygame.event.get()</code>), útil para acciones puntuales como saltar o pausar, y mediante
+                    <code>pygame.key.get_pressed()</code>, útil para movimientos continuos mientras una tecla permanece
+                    presionada.
+                </p>
+
+                <h3>Eventos puntuales (KEYDOWN / KEYUP)</h3>
+                <figure>
+                    <pre><code class="language-python">
+                                for evento in pygame.event.get():
+                                    if evento.type == pygame.QUIT:
+                                        corriendo = False
+
+                                    if evento.type == pygame.KEYDOWN:
+                                        if evento.key == pygame.K_SPACE:
+                                            print("Salto")
+
+                                    if evento.type == pygame.KEYUP:
+                                        if evento.key == pygame.K_SPACE:
+                                            print("Tecla soltada")
+                            </code></pre>
+                    <figcaption>Detección de una tecla presionada y soltada mediante eventos</figcaption>
+                </figure>
+
+                <h3>Movimiento continuo con get_pressed()</h3>
+                <p>Para un movimiento fluido, como desplazar un personaje mientras se mantiene una tecla presionada,
+                    conviene revisar el estado del teclado en cada fotograma en lugar de depender de eventos puntuales.
+                </p>
+                <figure>
+                    <pre><code class="language-python">
+                                x, y = 400, 300
+                                velocidad = 5
+
+                                teclas = pygame.key.get_pressed()
+
+                                if teclas[pygame.K_LEFT]:
+                                    x -= velocidad
+                                if teclas[pygame.K_RIGHT]:
+                                    x += velocidad
+                                if teclas[pygame.K_UP]:
+                                    y -= velocidad
+                                if teclas[pygame.K_DOWN]:
+                                    y += velocidad
+                            </code></pre>
+                    <figcaption>Movimiento continuo de un objeto usando las teclas de dirección</figcaption>
+                </figure>
+            </section>
+            <hr>
+            <section>
+                <h2 id="colisiones">Colisiones</h2>
+                <h3>El objeto Rect</h3>
+                <p>La forma más común de detectar colisiones en Pygame es mediante el objeto <code>pygame.Rect</code>,
+                    un rectángulo definido por una posición (x, y) y unas dimensiones (ancho, alto). Además de servir
+                    para colisiones, los objetos <code>Rect</code> también se utilizan para posicionar imágenes y
+                    elementos gráficos.</p>
+                <figure>
+                    <pre><code class="language-python">
+                                jugador = pygame.Rect(100, 100, 50, 50)
+                                enemigo = pygame.Rect(300, 300, 50, 50)
+
+                                if jugador.colliderect(enemigo):
+                                    print("Colisión detectada")
+                            </code></pre>
+                    <figcaption>Detección de colisión entre dos rectángulos con colliderect</figcaption>
+                </figure>
+
+                <h3>Colisiones con múltiples objetos</h3>
+                <p>Cuando se necesita comprobar la colisión de un objeto contra varios a la vez (por ejemplo, una bala
+                    contra una lista de enemigos), Pygame ofrece funciones auxiliares como <code>collidelist()</code> y
+                    <code>collidelistall()</code>, que evitan escribir un bucle manual de comparaciones.
+                </p>
+                <figure>
+                    <pre><code class="language-python">
+                                bala = pygame.Rect(150, 150, 10, 10)
+                                enemigos = [
+                                    pygame.Rect(140, 140, 30, 30),
+                                    pygame.Rect(400, 400, 30, 30),
+                                ]
+
+                                indice = bala.collidelist(enemigos)
+                                if indice != -1:
+                                    print(f"Colisión con el enemigo número {indice}")
+                            </code></pre>
+                    <figcaption>Detección de colisión contra una lista de rectángulos</figcaption>
+                </figure>
+
+                <h3>Grupos de sprites (Group)</h3>
+                <p>Para proyectos más grandes, Pygame ofrece la clase <code>pygame.sprite.Group</code>, que organiza
+                    objetos <code>Sprite</code> y permite comprobar colisiones entre grupos completos con funciones como
+                    <code>pygame.sprite.spritecollide()</code>, simplificando juegos con muchos elementos en pantalla.
+                </p>
 
 
+            </section>
+
+            <section>
+                <h2 id="ejemplo-practico">Ejemplo práctico</h2>
+                <p>Aquí hay un ejemplo de un juego en 2d desarrollado con Pygame:</p>
+                <figure>
+                    <img src="./img/assets/Gif_AbyssBound.gif" alt="Demostración del juego hecho con Pygame">
+                    <figcaption>Vista previa del juego en funcionamiento</figcaption>
+                </figure>
+                <div>
+                    <a href="https://github.com/Ctrl-Angelus/AbyssBound" target="_blank" rel="noopener noreferrer"
+                        aria-label="Ver código fuente del proyecto AbyssBound en GitHub">
+                        Ver código fuente en GitHub
+                    </a>
+                </div>
+            </section>
+
+        </article>
     </main>
-    <footer></footer>
-    <script src="js/theme.js" defer></script>
+    <footer>
+        <div class="footer-info">
+            <p class="footer-project">Proyecto guía 4: Desarrollo de una interfaz web responsiva</p>
+            <p>© Proyecto 2026: Todos los derechos reservados</p>
+        </div>
+
+        <ul class="footer-authors">
+            <li>Maria Antonia Posada Araujo</li>
+            <li>Carlos Daniel Giraldo Naranjo</li>
+            <li>Miguel Angel Ortiz Loaiza</li>
+        </ul>
+
+        <nav class="footer-links">
+            <a href="https://github.com/Ctrl-Angelus/Guia-4-M2_Desarrollo-de-una-interfaz-responsiva" target="_blank"
+                rel="noopener" aria-label="Repositorio en GitHub">
+                <i class="ti ti-brand-github"></i>
+            </a>
+            <a href="https://github.com/Ctrl-Angelus/Guia-4-M2_Desarrollo-de-una-interfaz-responsiva/blob/master/README.md"
+                target="_blank" rel="noopener">README</a>
+        </nav>
+    </footer>
+
+    <script src="js/theme.js"></script>
+
+    <!-- CDN al JavaScript de Prism para eliminar espacios en el código y resaltar python y bash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 </body>
 
 </html>
