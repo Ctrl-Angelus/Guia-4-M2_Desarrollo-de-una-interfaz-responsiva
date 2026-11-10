@@ -50,27 +50,31 @@ button {
   --color-footer: #1d8395;
   --color-logo: #1d8395;
   --fondo-logo: #e6f1ef;
+  --texto: black;
+  --pre: #133137;
 }
 
 body.dark {
-  --color-fondo: #83756c;
-  --color-header: #062227;
+  --color-fondo: #02181d;
+  --color-header: #03262c;
   --texto-header: #8a796d;
   --color-acento: #915f63;
-  --color-aside: #65564b;
+  --color-aside: #053a43;
   --color-aside-hover: #42615b;
-  --color-link-article: #053b45;
-  --color-link-article-hover: #02262d;
-  --color-link-aside: #103d45;
-  --color-link-aside-hover: #045a69;
-  --color-code: #3e2b15;
-  --color-headings: #a1691f;
-  --color-h2-bg: #887567;
+  --color-link-article: #268a7b;
+  --color-link-article-hover: #38a391;
+  --color-link-aside: #b9dee5;
+  --color-link-aside-hover: #ffffff;
+  --color-code: #3e9fd7;
+  --color-headings: #e99d39;
+  --color-h2-bg: #022329;
   --color-h3: #28acc3;
   --color-hr: #578e98;
-  --color-footer: #5e7276;
-  --color-logo: #1d8395;
-  --fondo-logo: #e6f1ef;
+  --color-footer: #005161;
+  --color-logo: #d3f2f7;
+  --fondo-logo: #003e46;
+  --texto: #e3f8ff;
+  --pre: #133137;
 }
 
 html {
@@ -86,6 +90,10 @@ body {
   flex-direction: column;
   padding: 0;
   align-items: center;
+}
+
+p {
+  color: var(--texto);
 }
 
 h1,
@@ -124,6 +132,10 @@ article a:focus-visible {
   outline-offset: 3px;
 }
 
+pre {
+  background-color: var(--pre) !important;
+}
+
 header {
   background-color: var(--color-header);
   position: sticky;
@@ -160,6 +172,10 @@ header>div {
   }
 }
 
+body.dark .navbar a {
+    color: var(--color-link-aside);
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -170,7 +186,7 @@ header>div {
   background-color: var(--fondo-logo);
   color: var(--color-logo);
   padding: 5px;
-  padding-inline: 20px;
+  padding-inline: 15px;
   border-radius: 10px;
 }
 
@@ -185,7 +201,7 @@ header>div {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background-color: var(--color-aside-hover);
+  background-color: var(--color-aside);
 
   & i {
     font-size: 25px;
@@ -274,6 +290,11 @@ footer {
   align-items: start;
   font-size: 0.9rem;
   padding: 15px;
+
+  & * {
+    color: white;
+    font-weight: bold;
+  }
 }
 
 footer p {
@@ -299,16 +320,11 @@ footer p {
   gap: 1rem;
 }
 
-body.dark .footer-links i {
-  color: white;
-}
-
 .footer-links a {
   display: flex;
   align-items: center;
   font-weight: bold;
   text-decoration: none;
-  color: inherit;
 }
 
 .footer-links a:hover,
@@ -343,7 +359,7 @@ hr {
   border: none;
   cursor: pointer;
   padding: 5px;
-  background-color: var(--color-aside-hover);
+  background-color: var(--color-aside);
   border-radius: 10px;
   margin-right: 10px;
 
