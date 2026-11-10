@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+  font-family: monserrat;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+:root {
+  --color-fondo: #fff3eb;
+  --color-header: #034a56;
+  --texto-header: #fff3eb;
+  --color-acento: #ffa2aa;
+  --color-aside: #fae3d2;
+  --color-aside-hover: #e6f1ef;
+  --color-link-article: #066b7d;
+  --color-link-article-hover: #034a56;
+  --color-link-aside: #034a56;
+  --color-link-aside-hover: #06849a;
+  --color-code: #6e5335;
+  --color-headings: #593200;
+  --color-h2-bg: #fbeee5;
+  --color-h3: #097a8e;
+  --color-hr: #097a8e;
+  --color-footer: #1d8395;
+}
+
+body.dark {
+  --color-fondo: #fff3eb;
+  --color-header: #034a56;
+  --texto-header: #fff3eb;
+  --color-acento: #ffa2aa;
+  --color-aside: #fae3d2;
+  --color-aside-hover: #e6f1ef;
+  --color-link-article: #066b7d;
+  --color-link-article-hover: #034a56;
+  --color-link-aside: #034a56;
+  --color-link-aside-hover: #06849a;
+  --color-code: #6e5335;
+  --color-headings: #593200;
+  --color-h2-bg: #fbeee5;
+  --color-h3: #097a8e;
+  --color-hr: #097a8e;
+  --color-footer: #1d8395;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: center;
+}
+
+h1,
+h2,
+#aside-header,
+figcaption {
+  color: var(--color-headings);
+  margin-bottom: 10px;
+}
+
+h2 {
+  background-color: var(--color-h2-bg);
+}
+
+h3 {
+  color: var(--color-h3);
+}
+
+code {
+  color: var(--color-code);
+}
+
+article a {
+  color: var(--color-link-article);
+}
+
+article a:hover {
+  color: var(--color-link-article-hover);
+}
+
+article a:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
+header,
+footer {
+  background-color: var(--color-header);
+  color: var(--texto-header);
+  width: 100%;
+  min-height: 70px;
+}
+
+footer {
+  background-color: var(--color-footer);
+}
+
+header {
+  display: flex;
+  padding: 10px;
+}
+
+.navbar {
+  margin-left: auto;
+}
+
+#toggler {
+  width: 40px;
+  height: 40px;
+}
+
+footer a,
+footer i {
+  color: var(--texto-header);
+}
+
+aside {
+  background-color: var(--color-aside);
+  position: sticky;
+}
+
+main {
+  width: 80%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: var(--color-aside-hover);
+}
