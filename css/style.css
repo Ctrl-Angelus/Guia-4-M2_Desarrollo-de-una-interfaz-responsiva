@@ -1,7 +1,12 @@
+@font-face {
+  font-family: monserrat;
+  src: url("../fonts/Monserrat.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
   font-family: monserrat;
 }
 
@@ -17,8 +22,8 @@
 }
 
 button {
-    cursor: pointer;
-    border: none;
+  cursor: pointer;
+  border: none;
 }
 
 :root {
@@ -107,21 +112,17 @@ article a:focus-visible {
   outline-offset: 3px;
 }
 
-header,
-footer {
+header {
   background-color: var(--color-header);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   color: var(--texto-header);
   width: 100%;
-  min-height: 70px;
-}
-
-footer {
-  background-color: var(--color-footer);
-}
-
-header {
+  height: 70px;
   display: flex;
   padding: 10px;
+  align-items: center;
 }
 
 .navbar {
@@ -133,14 +134,22 @@ header {
   height: 40px;
 }
 
-footer a,
-footer i {
-  color: var(--texto-header);
-}
-
 aside {
   background-color: var(--color-aside);
-  position: sticky;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 10px;
+
+  & div {
+    position: sticky;
+    top: 70px;
+  }
+
+  & nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 main {
@@ -149,4 +158,60 @@ main {
   display: grid;
   grid-template-columns: 1fr 4fr;
   background-color: var(--color-aside-hover);
+  height: 200vh;
+}
+
+article {
+  padding: 10px;
+}
+
+footer {
+  width: 100%;
+  background-color: var(--color-footer);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem 2rem;
+  align-items: start;
+  font-size: 0.9rem;
+  padding: 15px;
+}
+
+footer p {
+  margin: 0 0 0.4rem;
+}
+
+.footer-project {
+  font-weight: bold;
+}
+
+.footer-authors {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+body.dark .footer-links i {
+  color: white;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  text-decoration: underline;
 }
