@@ -396,7 +396,7 @@ hr {
     align-items: stretch;
     gap: 10px;
     padding: 15px;
-    background-color: var(--color-aside-hover);
+    background-color: var(--color-fondo);
     border: 5px solid var(--color-fondo);
 
     opacity: 0;
@@ -406,6 +406,10 @@ hr {
       opacity 0.2s ease,
       transform 0.2s ease,
       visibility 0s linear 0.2s;
+
+      & a {
+        color: var(--texto) !important;
+      }
   }
 
   header nav.open {
