@@ -1,6 +1,8 @@
 # Guía 4 - M2 - Desarrollo de una interfaz web responsiva 
 ****
 
+<img src="./img/Banner.png" alt="portada" align="center">
+
 ## Introducción del proyecto
 ****
 
